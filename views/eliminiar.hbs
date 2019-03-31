@@ -1,0 +1,57 @@
+{{>header}}
+
+<section class="container">
+	{{{infoInscritosCursos}}}
+</section>
+
+<section class="container">
+	<h3>Para eliminar una persona ingrese sus datos en el siguiente formulario:</h3>	
+	<form action="/eliminar" method="post">
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group">
+                    <label>Documento de identidad:</label>
+					<input name="documento" type="text" class="form-control" placeholder="Documento de identidad" required>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="form-group">
+                    <label>Nombre:</label>
+					<input name="nombre" type="text" class="form-control" placeholder="Nombre" required>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group">
+                    <label>Correo electrónico:</label>
+					<input name="correo" type="email" class="form-control" placeholder="Correo electrónico" required>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="form-group">
+                    <label>Teléfono:</label>
+					<input name="telefono" type="text" class="form-control" placeholder="Teléfono">
+				</div>
+			</div>
+		</div>	
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group">
+                    <label>Seleccione el curso a elimininar:</label>
+					<select class="form-control" name="curso">
+						<option selected="selected">Seleccionar</option>
+						{{{listadoCursos}}}
+					</select>
+				</div>
+			</div>
+		</div>				
+		<div class="row">
+			<div class="col-12">	
+				<button class="btn btn-primary">Eliminar a esta persona del curso</button>		
+			</div>
+		</div>					
+	</form>
+</section>
+
+{{>footer}}

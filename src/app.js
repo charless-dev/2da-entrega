@@ -38,6 +38,47 @@ app.post('/crear',(req,res) => {
 	});
 })
 
+app.get('/info-cursos', (req, res) => {
+	res.render('infoCursos');
+});
+
+app.get('/inscripcion',(req,res) => {
+	res.render('inscripcion');
+});
+
+app.post('/inscripcion',(req,res) => {
+	res.render('inscripcionCreada', {
+		documento: req.body.documento,
+		nombre: req.body.nombre,
+		correo: req.body.correo,
+		telefono: req.body.telefono,
+		curso: req.body.curso
+	});
+});
+
+app.get('/inscritos-cursos',(req,res) => {
+	res.render('infoInscritosCursos');
+})
+
+app.post('/inscritos-cursos',(req,res) => {
+	res.render('cursoCerrado', {
+		curso: req.body.curso
+	});
+})
+
+app.get('/eliminar',(req,res) => {
+	res.render('eliminiar');
+});
+
+app.post('/eliminar',(req,res) => {
+	res.render('eliminado', {
+		documento: req.body.documento,
+		nombre: req.body.nombre,
+		correo: req.body.correo,
+		telefono: req.body.telefono,
+		curso: req.body.curso
+	});
+});
 
 app.listen(3000,()=>{
 	console.log('Servidor activo')
